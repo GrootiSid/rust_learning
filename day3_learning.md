@@ -1,4 +1,4 @@
-# Rust Day 3: How Rust Works Internally 🦀
+# Rust Day 3: How Rust Works Internally
 
 Welcome back! Yesterday, we learned about variables, shadowing, control flow, loops, and basic data types. Today, we're going to dive under the hood and answer a critical question that most beginners overlook:
 
@@ -20,32 +20,45 @@ fn main() {
 
 While it looks simple, your CPU does not understand Rust. Your computer only understands **Machine Code (0s and 1s)**. Here is the step-by-step process of how Rust code travels from your keyboard to the processor:
 
-### 🔄 The Compilation Pipeline
+###  The Compilation Pipeline
 
-```mermaid
-flowchart TD
-    classDef start fill:#ECEFF1,stroke:#37474F,stroke-width:2px;
-    classDef step fill:#FFF9C4,stroke:#FBC02D,stroke-width:1px;
-    classDef check fill:#C8E6C9,stroke:#388E3C,stroke-width:1px;
-    classDef out fill:#BBDEFB,stroke:#1976D2,stroke-width:2px;
-
-    Start[⌨️ You Write Source Code\nmain.rs]:::start --> Cargo[📦 Cargo Starts\ncargo run / cargo build]:::step
-    Cargo --> Rustc[⚙️ Rust Compiler\nrustc]:::step
-    
-    subgraph Compiler Checks [🛡️ Strict Validation Phase]
-        Syntax[✅ Syntax Verification]:::check
-        Types[✅ Type checking]:::check
-        Ownership[✅ Ownership & Borrow rules]:::check
-        Lifetimes[✅ Lifetime analysis]:::check
-    end
-    
-    Rustc --> CompilerChecks
-    CompilerChecks -->|Validation Fails| Errors[❌ Compile-Time Errors\nProgram does not build]:::out
-    CompilerChecks -->|Validation Passes| Opt[⚡ Code Optimization\nDead-code stripping & math simplification]:::step
-    
-    Opt --> MachineCode[🤖 Machine Code Gen\nTranslates code to Binary 0s & 1s]:::step
-    MachineCode --> Exe[💾 Native Executable\napp.exe / app]:::out
-    Exe --> Run[🧠 CPU Executes Binary\nLoads into RAM and runs]:::out
+```text
+           ⌨️ You Write Source Code (main.rs)
+                           │
+                           ▼
+          📦 Cargo Starts (run/build commands)
+                           │
+                           ▼
+              ⚙️ Rust Compiler (rustc)
+                           │
+                           ▼
+          ┌──────────────────────────────────┐
+          │   🛡️ Strict Validation Phase     │
+          │  - Syntax Verification           │
+          │  - Type Checking                 │
+          │  - Ownership & Borrow Rules      │
+          │  - Lifetime Analysis             │
+          └────────────────┬─────────────────┘
+                           │
+             ┌─────────────┴─────────────┐
+             ▼                           ▼
+    [Validation Fails]          [Validation Passes]
+             │                           │
+  ❌ Compile-Time Errors                 ▼
+  (Program does not build)     ⚡ Code Optimization
+                               (Simplification & dead-code removal)
+                                         │
+                                         ▼
+                               🤖 Machine Code Gen
+                               (Translates to Binary 0s & 1s)
+                                         │
+                                         ▼
+                               💾 Native Executable
+                               (app.exe / app file)
+                                         │
+                                         ▼
+                               🧠 CPU Executes Binary
+                               (Loads into RAM & runs)
 ```
 
 ---
@@ -110,17 +123,14 @@ When you execute this file, your computer’s **CPU (Central Processing Unit)** 
 
 Imagine two different restaurant kitchens:
 
-```mermaid
-graph LR
-    subgraph Compiled Languages (Rust, C, C++)
-        c_code[📝 Order / Code] --> c_prep[👨‍🍳 Chef Pre-cooks & Prepares Everything]
-        c_prep --> c_serve[🚀 Instant Service to Customer]
-    end
+```text
+Compiled Languages (Rust, C, C++):
+   📝 Order/Code  ──>  👨‍🍳 Chef Pre-cooks  ──>  🚀 Served Instantly
+                       (Before compiling)        (Fast execution)
 
-    subgraph Interpreted Languages (Python, JS)
-        i_code[📝 Order / Code] --> i_cook[👨‍🍳 Chef cooks line-by-line while customer eats]
-        i_cook --> i_wait[⚠️ Customer waits between bites]
-    end
+Interpreted Languages (Python, JS):
+   📝 Order/Code  ──>  👨‍🍳 Chef cooks line-by-line while customer eats
+                       (Runtime translation)   ──> ⚠️ Customer waits between bites
 ```
 
 * **Chef A (Interpreted - Python / JavaScript)**: Reads the recipe (source code) line-by-line *while* cooking and serving the customer. Because the interpreter must read and translate code during execution, it runs slower.
