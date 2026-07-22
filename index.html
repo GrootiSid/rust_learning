@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddhant Kumar - Resume</title>
+    <meta name="description" content="Resume of Siddhant Kumar - Computer Science Engineering student with experience in Agentic AI, Full Stack Web Development, and Java.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #0f172a;
+            --surface: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--surface);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #e0e7ff;
+        }
+
+        .contact-info a {
+            color: #e0e7ff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .content {
+            padding: 2.5rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+            display: inline-block;
+        }
+
+        .summary {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+        
+        .summary strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .item {
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+        
+        .item:hover {
+            transform: translateX(4px);
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .item-subtitle {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            float: right;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        .item-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin-bottom: 1.25rem;
+        }
+
+        .skills-list strong {
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: all 0.2s;
+        }
+        
+        .badge:hover {
+            background: rgba(56, 189, 248, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .item-date {
+                float: none;
+                display: inline-block;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Siddhant Kumar</h1>
+            <div class="contact-info">
+                <span>📍 Samastipur, Bihar</span>
+                <span>📞 +91-7492973921</span>
+                <span>✉️ <a href="mailto:siddhantgrooti@gmail.com">siddhantgrooti@gmail.com</a></span>
+                <span>💻 GitHub: <a href="https://github.com/GrootiSid" target="_blank">GrootiSid</a></span>
+            </div>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>Summary</h2>
+                <p class="summary">
+                    Motivated Computer Science Engineering student with hands-on experience in <strong>Agentic AI, Full Stack Web Development, and Java</strong>. Skilled in designing and developing AI-powered applications and SaaS solutions with a strong foundation in C, C++, Python, Django, React.js, SQL, and MongoDB. Passionate about problem-solving, AI research, and innovative software development, with proven strengths in teamwork, leadership, and effective communication.
+                </p>
+            </section>
+
+            <section>
+                <h2>Experience</h2>
+                <div class="item">
+                    <span class="item-date">June 2025 – July 2025</span>
+                    <div class="item-title">Intern – CodeApto, Bengaluru</div>
+                    <div class="item-desc">
+                        Worked on Agentic AI and Full Stack Web Development. Gained hands-on knowledge of AI agents, LLMs frameworks, and API integration.
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="item">
+                    <span class="item-date">June 2022 – July 2022</span>
+                    <div class="item-title">Trainee – Ansh Infotech, Ludhiana</div>
+                    <div class="item-desc">
+                        Completed 4-week training in Java (Core + OOPs). Strengthened programming fundamentals in loops, functions, file handling, and OOP concepts.
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Projects</h2>
+                <div class="item">
+                    <div class="item-title">AI-Powered Farmer Guide Application “KishanMitra”</div>
+                    <div class="item-subtitle">Tools: React, MongoDB, OpenAI API, Weather API</div>
+                    <div class="item-desc">
+                        Provides intelligent crop recommendations, weather insights, and disease detection with multilingual support.
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-title">Near Field Communication (NFC) based SaaS</div>
+                    <div class="item-subtitle">Tools: HTML, CSS, JS, NFC Tag, MongoDB</div>
+                    <div class="item-desc">
+                        Built an NFC-based platform for secure short-range wireless data exchange.
+                    </div>
+                </div>
+            </section>
+
+            <div class="grid-2">
+                <section>
+                    <h2>Education</h2>
+                    <div class="item">
+                        <span class="item-date">2023 – 2026</span>
+                        <div class="item-title">SLIET, Punjab</div>
+                        <div class="item-desc">Bachelor of Engineering in CSE<br>CGPA: 6.2 / 10 (till 6th Sem)</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="item">
+                        <span class="item-date">2020 – 2023</span>
+                        <div class="item-title">SLIET, Punjab</div>
+                        <div class="item-desc">Diploma in CSE<br>CGPA: 8.04 / 10</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="item">
+                        <span class="item-date">2020</span>
+                        <div class="item-title">Public Central School, Bihar</div>
+                        <div class="item-desc">CBSE<br>Percentage: 78.2%</div>
+                        <div class="clear"></div>
+                    </div>
+                </section>
+
+                <div>
+                    <section>
+                        <h2>Skills</h2>
+                        <ul class="skills-list">
+                            <li>
+                                <strong>Programming</strong>
+                                <div class="badges">
+                                    <span class="badge">C</span><span class="badge">C++</span><span class="badge">Python</span><span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">JS</span>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Frameworks & Databases</strong>
+                                <div class="badges">
+                                    <span class="badge">Django</span><span class="badge">React.js</span><span class="badge">SQL</span><span class="badge">MongoDB</span>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Tools</strong>
+                                <div class="badges">
+                                    <span class="badge">VS Code</span><span class="badge">Git</span><span class="badge">Github</span>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Soft Skills</strong>
+                                <div class="item-desc">Leadership, Teamwork, Communication</div>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <h2>Languages & Hobbies</h2>
+                        <ul class="skills-list">
+                            <li>
+                                <strong>Languages</strong>
+                                <div class="item-desc">English, Hindi</div>
+                            </li>
+                            <li>
+                                <strong>Hobbies</strong>
+                                <div class="item-desc">Photography, Cinematography, Cricket</div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
