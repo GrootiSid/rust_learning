@@ -13,11 +13,11 @@ fn main() {
     let mut _reference_to_string: &String;
 
     {
-        let string2 = String::from("Short-lived string");
-        // We can safely borrow string2 here because it's still alive in this scope.
+        let _string2 = String::from("Short-lived string");
+        // We can safely borrow _string2 here because it's still alive in this scope.
         _reference_to_string = &string1; 
         
-        // If we tried to do `_reference_to_string = &string2;` 
+        // If we tried to do `_reference_to_string = &_string2;` 
         // the compiler would stop us! Because string2 dies at the end of this block.
         println!("We safely borrowed 'string1' because it outlives this block.");
     }
